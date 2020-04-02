@@ -2,6 +2,7 @@ package hu.tigra.pti.geb.page
 
 import geb.Page
 import geb.module.RadioButtons
+import hu.tigra.pti.geb.module.ErrorMessages
 
 class RegisterPage extends Page {
 
@@ -15,5 +16,7 @@ class RegisterPage extends Page {
         firstName { $('input[id="customer_firstname"]') }
         lastName { $('input[id="customer_lastname"]') }
         password { $('input[id="passwd"]') }
+        regButton { $('button[id="submitAccount"]') }
+        errorMessages(required: false) { $('div[class="alert alert-danger"]:first-of-type').module ErrorMessages }
     }
 }
